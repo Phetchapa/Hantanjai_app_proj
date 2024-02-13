@@ -5,6 +5,8 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.appcompat.app.AppCompatActivity
+import androidx.appcompat.widget.AppCompatTextView
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -23,11 +25,17 @@ class Home : Fragment() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+
         arguments?.let {
             param1 = it.getString(ARG_PARAM1)
             param2 = it.getString(ARG_PARAM2)
         }
+        val actionBarTextView: AppCompatTextView? = (activity as? AppCompatActivity)?.supportActionBar?.customView?.findViewById(R.id.action_bar)
+
+        // Update the text of the TextView if found
+        actionBarTextView?.text = "หน้าหลัก"
     }
+
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
