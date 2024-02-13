@@ -48,4 +48,10 @@ dependencies {
     testImplementation("junit:junit:4.13.2")
     androidTestImplementation("androidx.test.ext:junit:1.1.5")
     androidTestImplementation("androidx.test.espresso:espresso-core:3.5.1")
+
+    // recycleview for hanmoney_step1
+    implementation("androidx.recycleview:recyclerview:1.2.0")
+
+    // roundedImageview for hanmoney_step1
+    implementation("com.makeramen:roundedimageview:2.3.0")
 }

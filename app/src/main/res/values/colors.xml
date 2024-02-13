@@ -4,4 +4,15 @@
     <color name="white">#FFFFFFFF</color>
     <color name="skyblue">#03A9F4</color>
     <color name="yellow">#FFD54F</color>
+
+    <!--  color for hanmoney_step1  -->
+    <color name="colorPrimary">#41D3BD</color>
+    <color name="colorPrimaryDark">#41D3BD</color>
+    <color name="colorAccent">#FDA14F</color>
+    <color name="colorTextIcons">#FFFFFF</color>
+    <color name="colorTextPrimary">#212121</color>
+    <color name="colorTextSecondary">#757575</color>
+    <color name="colorRatingActive">#FDA14F</color>
+    <color name="colorRatingInactive">#C9C9D1</color>
+    <color name="colorBackground">#EEEEEE</color>
 </resources>
