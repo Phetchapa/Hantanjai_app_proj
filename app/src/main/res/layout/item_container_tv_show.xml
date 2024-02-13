@@ -17,13 +17,6 @@
         app:layout_constraintTop_toTopOf="parent"
         app:riv_corner_radius="6dp"/>
 
-    <TextView
-        android:id="@+id/textName"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="10dp"
-        android:layout_marginTop="35dp"
-        android:layout_marginEnd="10dp"
-        android:layout_paddingTop="35dp"/>
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>
