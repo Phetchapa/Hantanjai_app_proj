@@ -50,8 +50,12 @@ dependencies {
     androidTestImplementation("androidx.test.espresso:espresso-core:3.5.1")
 
     // recycleview for hanmoney_step1
-    implementation("androidx.recycleview:recyclerview:1.2.0")
+//    implementation("androidx.recycleview:recyclerview:1.2.0")
 
     // roundedImageview for hanmoney_step1
-    implementation("com.makeramen:roundedimageview:2.3.0")
+//    implementation("com.makeramen:roundedimageview:2.3.0")
+
+    //for hanmoneyStep1
+    implementation("androidx.recyclerview:recyclerview:1.3.0")
+    implementation("androidx.recyclerview:recyclerview-selection:1.1.0")
 }

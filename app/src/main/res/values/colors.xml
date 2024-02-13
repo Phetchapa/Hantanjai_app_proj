@@ -15,4 +15,8 @@
     <color name="colorRatingActive">#FDA14F</color>
     <color name="colorRatingInactive">#C9C9D1</color>
     <color name="colorBackground">#EEEEEE</color>
+
+    <!--  color for hanmoneyฆtep1  -->
+    <color name="orange_700">#FFA726</color>
+    <color name="purple_500">#9C27B0</color>
 </resources>
