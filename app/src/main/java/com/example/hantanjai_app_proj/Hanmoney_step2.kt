@@ -147,6 +147,7 @@ package com.example.hantanjai_app_proj
 
 import android.content.Intent
 import android.os.Bundle
+import android.view.View
 import android.widget.Button
 import android.widget.EditText
 import android.widget.ImageView
@@ -171,6 +172,7 @@ class Hanmoney_step2 : AppCompatActivity() {
     private var editTextValues: MutableList<String?> = mutableListOf()
     var selectedFriendNames: Array<String>? = null
     var selectedUserProfiles: IntArray? = null
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_hanmoney_step2)
@@ -207,26 +209,103 @@ class Hanmoney_step2 : AppCompatActivity() {
 
 
             recyclerView!!.adapter = myAdapter
+//            radiohanequl!!.setOnCheckedChangeListener { _, isChecked ->
+//                if (isChecked) {
+//
+////                    recyclerView2?.visibility = View.VISIBLE
+//
+//                    // Pass editTextValues to MyAdapterstep2 for recyclerView2
+//                    val myAdapter2 = MyAdapterstep2(
+//                        selectedFriendNames!!.toList(),
+//                        selectedUserProfiles!!.toList(),
+//                        editTextValues
+//                    ) { updatedValues ->
+//                        editTextValues = updatedValues.toMutableList()
+//                    }
+//
+//                    recyclerView2!!.adapter = myAdapter2
+//
+//                    // Calculate total based on editTextValues and display in showtotal TextView
+//                    val total = editTextValues
+//                        .filterNotNull()
+//                        .map { it.toDoubleOrNull() ?: 0.0 }
+//                        .sum()
+//
+//                    showtotal?.text = "$total ฿"
+//                } else {
+//                    // Hide recyclerView2 when radiohanunequl is not checked
+////                    recyclerView2?.visibility = View.GONE
+//                }
             radiohanequl!!.setOnCheckedChangeListener { _, isChecked ->
                 if (isChecked) {
+                    // Calculate total based on editTextValues
                     val total = editTextValues
                         .filterNotNull()
                         .map { it.toDoubleOrNull() ?: 0.0 }
                         .sum()
 
+                    // Calculate the equal amount for each person
+                    val equalAmount = total / selectedFriendNames!!.size
+
+                    // Update editTextValues with equal amount for each person
+                    editTextValues = MutableList(selectedFriendNames!!.size) { equalAmount.toString() }
+
+                    // Update recyclerView adapter with the new values
+                    recyclerView!!.adapter?.notifyDataSetChanged()
+
+                    // Display the total amount in showtotal TextView
                     showtotal?.text = "$total ฿"
                 }
+
+
             }
 
             radiohanunequl!!.setOnCheckedChangeListener { _, isChecked ->
                 if (isChecked) {
+                    // Show recyclerView2 when radiohanunequl is checked
+//                    recyclerView2?.visibility = View.VISIBLE
+                    // Pass editTextValues to MyAdapterstep2 for recyclerView2
+                    val myAdapter2 = MyAdapterstep2(
+                        selectedFriendNames!!.toList(),
+                        selectedUserProfiles!!.toList(),
+                        editTextValues
+                    ) { updatedValues ->
+                        editTextValues = updatedValues.toMutableList()
+                    }
+
+                    recyclerView2!!.adapter = myAdapter2
                     val total = editTextValues
                         .filterNotNull()
                         .map { it.toDoubleOrNull() ?: 0.0 }
                         .sum()
 
                     showtotal?.text = "$total ฿"
+                }else {
+                    // Hide recyclerView2 when radiohanunequl is not checked
+//                    recyclerView2?.visibility = View.GONE
                 }
+            }
+            btnconfirm!!.setOnClickListener {
+                // Calculate total based on editTextValues and display in showtotal TextView
+                val total = editTextValues
+                    .filterNotNull()
+                    .map { it.toDoubleOrNull() ?: 0.0 }
+                    .sum()
+
+                // Display a Toast message with the total value
+//                Toast.makeText(this, "Total: $total ฿", Toast.LENGTH_LONG).show()
+                Toast.makeText(this, "Total: $total ฿\nMembers: ${editTextValues.joinToString(", ")}", Toast.LENGTH_LONG).show()
+
+                // Create an Intent to start the HomeActivity
+                val intent = Intent(this, MainActivity::class.java)
+
+                // Pass the necessary data to the next activity
+                intent.putExtra("totalValue", total)
+                intent.putExtra("editTextValues", editTextValues.toTypedArray())
+
+                // Start the next activity
+                startActivity(intent)
+                finish() // Finish the current activity
             }
 
 //            btnconfirm!!.setOnClickListener {
