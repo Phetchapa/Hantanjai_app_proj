@@ -9,6 +9,7 @@ import android.view.View
 import android.widget.Button
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
+import androidx.cardview.widget.CardView
 import androidx.recyclerview.selection.ItemDetailsLookup
 import androidx.recyclerview.selection.SelectionPredicates
 import androidx.recyclerview.selection.SelectionTracker
@@ -22,6 +23,7 @@ class HanmoneyStep1 : AppCompatActivity() {
 
     var recyclerView: RecyclerView? = null
     var step1btnconfirm: Button? = null
+    var card_view_selectAll: CardView?= null
 
     var friendName = arrayOf(
         "Seulgi",
@@ -51,6 +53,23 @@ class HanmoneyStep1 : AppCompatActivity() {
         val myAdapterForHanStepOne = MyAdapterForHanStepOne(friendName, userProfile)
         recyclerView!!.adapter = myAdapterForHanStepOne
 
+        //select all
+        // Flag to track whether all items are selected or not
+        var allItemsSelected = false
+
+        card_view_selectAll?.setOnClickListener {
+            if (!allItemsSelected) {
+                // Select all items in the RecyclerView
+                myAdapterForHanStepOne.selectAllItems()
+                allItemsSelected = true
+            } else {
+                // Deselect all items in the RecyclerView
+                myAdapterForHanStepOne.deselectAllItems()
+                allItemsSelected = false
+            }
+        }
+        //end select all
+
         step1btnconfirm?.setOnClickListener {
             val selectedIndices = myAdapterForHanStepOne.getSelectedIndices()
 
@@ -72,6 +91,7 @@ class HanmoneyStep1 : AppCompatActivity() {
     fun init(){
         recyclerView = findViewById(R.id.recycler_view)
         step1btnconfirm = findViewById(R.id.step1btnconfirm)
+        card_view_selectAll = findViewById(R.id.card_view_selectAll)
     }
 
 }

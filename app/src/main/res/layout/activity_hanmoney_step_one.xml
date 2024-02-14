@@ -6,40 +6,124 @@
     android:layout_height="match_parent"
     tools:context=".HanmoneyStep1">
 
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/recycler_view"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_marginTop="16dp"
-        android:layout_marginBottom="16dp"
-        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager" />
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="364dp"
+        android:layout_height="12dp"
+        android:fillViewport="true"
+        tools:layout_editor_absoluteX="46dp"
+        tools:layout_editor_absoluteY="310dp">
+
+    </androidx.core.widget.NestedScrollView>
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="70dp"
-        android:gravity="center_vertical"
-        android:orientation="horizontal"
-        android:padding="10dp"
-        app:layout_constraintBottom_toBottomOf="parent">
-        <Button
-            android:id="@+id/step1btnback"
-            android:layout_width="150dp"
-            android:layout_height="50dp"
-            android:text="ย้อนกลับ"
-            android:textColor="@color/skyblue"
-            android:background="@drawable/buttonbackforstep2"
-            android:textSize="15sp"
-            app:cornerRadius="8dp" />
-        <Button
-            android:id="@+id/step1btnconfirm"
-            android:layout_width="match_parent"
-            android:layout_height="50dp"
-            android:textColor="@color/white"
-            android:background="@drawable/buttonconfirmforstep2"
-            android:text="ถัดไป"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="0dp"
+        android:orientation="vertical"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:layout_editor_absoluteX="46dp">
 
-            android:textSize="15sp"
-            android:layout_marginStart="10dp" />
+        <!--    card view    -->
+        <androidx.cardview.widget.CardView
+            android:id="@+id/card_view_selectAll"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginStart="20dp"
+            android:layout_marginEnd="20dp"
+            app:cardCornerRadius="4dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="10dp"
+                android:orientation="horizontal"
+                android:gravity="center">
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.2"
+                    android:orientation="vertical">
+                    <!-- ส่วนของเนื้อหาของ LinearLayout ที่เป็นแนวนอนที่ 1 -->
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        tools:context=".MainActivity">
+
+                        <!-- Circular Image View  -->
+                        <de.hdodenhof.circleimageview.CircleImageView
+                            android:id="@+id/profile_image"
+                            android:layout_width="300dp"
+                            android:layout_height="300dp"
+                            android:layout_centerInParent="true"
+                            android:src="@drawable/flower01" />
+
+                    </RelativeLayout>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.8"
+                    android:orientation="vertical">
+                    <!-- ส่วนของเนื้อหาของ LinearLayout ที่เป็นแนวนอนที่ 2 -->
+                    <TextView
+                        android:id="@+id/task_title_select_all"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="sans-serif"
+                        android:textColor="@color/black"
+                        android:textSize="22sp"
+                        tools:text="เลือกทั้งหมด" />
+                </LinearLayout>
+
+            </LinearLayout>
+
+
+
+        </androidx.cardview.widget.CardView>
+        <!--  end card view  -->
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recycler_view"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="16dp"
+            android:layout_marginBottom="16dp"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="70dp"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:padding="10dp">
+
+            <Button
+                android:id="@+id/step1btnback"
+                android:layout_width="150dp"
+                android:layout_height="50dp"
+                android:background="@drawable/buttonbackforstep2"
+                android:text="ย้อนกลับ"
+                android:textColor="@color/skyblue"
+                android:textSize="15sp"
+                app:cornerRadius="8dp" />
+
+            <Button
+                android:id="@+id/step1btnconfirm"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_marginStart="10dp"
+                android:background="@drawable/buttonconfirmforstep2"
+                android:text="ถัดไป"
+
+                android:textColor="@color/white"
+                android:textSize="15sp" />
+        </LinearLayout>
     </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
