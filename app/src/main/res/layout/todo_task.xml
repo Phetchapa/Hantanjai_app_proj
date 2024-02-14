@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/card_view"
     android:layout_width="match_parent"
-    android:layout_height="80dp"
+    android:layout_height="60dp"
     android:layout_marginTop="10dp"
     android:layout_marginStart="20dp"
     android:layout_marginEnd="20dp"
@@ -15,24 +15,51 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="20dp"
         android:layout_marginTop="10dp"
-        android:orientation="vertical">
-        <TextView
-            android:id="@+id/task_title"
-            android:layout_width="wrap_content"
+        android:layout_marginBottom="10dp"
+        android:orientation="horizontal"
+        android:gravity="center">
+
+        <LinearLayout
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
-            tools:text="Buy Some Apples"
-            android:fontFamily="sans-serif-black"
-            android:textColor="@color/black"
-            android:textAllCaps="true"
-            android:textSize="24sp" />
-        <TextView
-            android:id="@+id/task_detail"
-            android:layout_width="wrap_content"
+            android:layout_weight="0.2"
+            android:orientation="vertical">
+            <!-- ส่วนของเนื้อหาของ LinearLayout ที่เป็นแนวนอนที่ 1 -->
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                tools:context=".MainActivity">
+
+                <!-- Circular Image View  -->
+                <de.hdodenhof.circleimageview.CircleImageView
+                    android:id="@+id/profile_image"
+                    android:layout_width="300dp"
+                    android:layout_height="300dp"
+                    android:layout_centerInParent="true"
+                    android:src="@drawable/flower01" />
+
+            </RelativeLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
-            tools:text="Make sure they are fresh!"
-            android:fontFamily="sans-serif-condensed-medium"
-            android:textColor="@color/black"
-            android:textSize="18sp" />
+            android:layout_weight="0.8"
+            android:orientation="vertical">
+            <!-- ส่วนของเนื้อหาของ LinearLayout ที่เป็นแนวนอนที่ 2 -->
+            <TextView
+                android:id="@+id/task_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="sans-serif"
+                android:textColor="@color/black"
+                android:textSize="22sp"
+                tools:text="Buy Some Apples" />
+        </LinearLayout>
+
     </LinearLayout>
+
+
 
 </androidx.cardview.widget.CardView>
