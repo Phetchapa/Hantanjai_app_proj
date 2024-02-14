@@ -32,10 +32,22 @@ class HanmoneyStep1 : AppCompatActivity() {
         "Jisoo",
         "Irene",
         "Jennie",
+        "Seulgi",
+        "Winter",
+        "Papaya salad",
+        "Jisoo",
+        "Irene",
+        "Jennie",
         "Wonyong"
     )
 
     var userProfile = arrayOf<Int>(
+        R.drawable.flower01,
+        R.drawable.flower02,
+        R.drawable.flower03,
+        R.drawable.flower04,
+        R.drawable.flower05,
+        R.drawable.flower06,
         R.drawable.flower01,
         R.drawable.flower02,
         R.drawable.flower03,
@@ -49,6 +61,8 @@ class HanmoneyStep1 : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_hanmoney_step_one)
         init()
+
+
 
         val myAdapterForHanStepOne = MyAdapterForHanStepOne(friendName, userProfile)
         recyclerView!!.adapter = myAdapterForHanStepOne

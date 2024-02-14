@@ -1,5 +1,6 @@
 package com.example.hantanjai_app_proj
 
+import android.content.Intent
 import android.os.Bundle
 import android.widget.Button
 import android.widget.EditText
@@ -56,6 +57,15 @@ class Hanmoney_step2 : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_hanmoney_step2)
         init()
+        navbarback?.setOnClickListener {
+
+            val intent = Intent(this, HanmoneyStep1::class.java)
+
+
+            // Start the next activity
+            startActivity(intent)
+            finish()
+        }
 
         // Retrieve the selectedFriendNames and selectedUserProfiles from the intent
         selectedFriendNames = intent.getStringArrayExtra("selectedFriendNames")

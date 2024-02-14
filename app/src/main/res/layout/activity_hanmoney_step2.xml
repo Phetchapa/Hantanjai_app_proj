@@ -181,6 +181,13 @@
                     android:text="หารไม่เท่ากัน" />
             </RadioGroup>
         </LinearLayout>
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/hanrecycleviewstep2"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            app:layout_constraintTop_toBottomOf="@+id/datastep2"
+            app:layout_constraintBottom_toTopOf="@+id/linearLayout"/>
         <LinearLayout
 
             android:id="@+id/linearLayout"
