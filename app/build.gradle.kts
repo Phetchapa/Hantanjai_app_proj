@@ -55,8 +55,8 @@ dependencies {
     // roundedImageview for hanmoney_step1
     //implementation("com.makeramen:roundedimageview:2.3.0")
 
-    // for hanmoneyStep1
     implementation ("androidx.recyclerview:recyclerview:1.3.0")
     implementation ("androidx.recyclerview:recyclerview-selection:1.1.0")
     implementation ("de.hdodenhof:circleimageview:3.1.0")
+
 }
