@@ -1,34 +1,34 @@
-package com.example.hantanjai_app_proj
-
-import android.content.Intent
-import android.os.Bundle
-import android.widget.Button
-import android.widget.EditText
-import android.widget.ImageView
-import android.widget.RadioButton
-import android.widget.TextView
-import android.widget.Toast
-import androidx.appcompat.app.AppCompatActivity
-import androidx.recyclerview.widget.GridLayoutManager
-import androidx.recyclerview.widget.LinearLayoutManager
-import androidx.recyclerview.widget.RecyclerView
-import java.text.SimpleDateFormat
-import java.util.Calendar
-
-
-class Hanmoney_step2 : AppCompatActivity() {
-    var recyclerView: RecyclerView? = null
-    var navbarback: ImageView? = null
-    var navbaredit: EditText? = null
-    var btnconfirm: Button? = null
-    var radiohanequl: RadioButton? = null
-    var radiohanunequl: RadioButton? = null
-
-    var recyclerView2: RecyclerView? = null
-    private var editTextValues: MutableList<String?> = mutableListOf()
-    var selectedFriendNames: Array<String>? = null
-    var selectedUserProfiles: IntArray? = null
-//    override fun onCreate(savedInstanceState: Bundle?) {
+//package com.example.hantanjai_app_proj
+//
+//import android.content.Intent
+//import android.os.Bundle
+//import android.widget.Button
+//import android.widget.EditText
+//import android.widget.ImageView
+//import android.widget.RadioButton
+//import android.widget.TextView
+//import android.widget.Toast
+//import androidx.appcompat.app.AppCompatActivity
+//import androidx.recyclerview.widget.GridLayoutManager
+//import androidx.recyclerview.widget.LinearLayoutManager
+//import androidx.recyclerview.widget.RecyclerView
+//import java.text.SimpleDateFormat
+//import java.util.Calendar
+//
+//
+//class Hanmoney_step2 : AppCompatActivity() {
+//    var recyclerView: RecyclerView? = null
+//    var navbarback: ImageView? = null
+//    var navbaredit: EditText? = null
+//    var btnconfirm: Button? = null
+//    var radiohanequl: RadioButton? = null
+//    var radiohanunequl: RadioButton? = null
+//
+//    var recyclerView2: RecyclerView? = null
+//    private var editTextValues: MutableList<String?> = mutableListOf()
+//    var selectedFriendNames: Array<String>? = null
+//    var selectedUserProfiles: IntArray? = null
+//        override fun onCreate(savedInstanceState: Bundle?) {
 //        super.onCreate(savedInstanceState)
 //        setContentView(R.layout.activity_hanmoney_step2)
 //        init()
@@ -86,48 +86,165 @@ class Hanmoney_step2 : AppCompatActivity() {
 //
 //
 //    }
-override fun onCreate(savedInstanceState: Bundle?) {
-    super.onCreate(savedInstanceState)
-    setContentView(R.layout.activity_hanmoney_step2)
-    init()
-    navbarback?.setOnClickListener {
-        val intent = Intent(this, HanmoneyStep1::class.java)
-        startActivity(intent)
-        finish()
-    }
+////override fun onCreate(savedInstanceState: Bundle?) {
+////    super.onCreate(savedInstanceState)
+////    setContentView(R.layout.activity_hanmoney_step2)
+////    init()
+////    navbarback?.setOnClickListener {
+////        val intent = Intent(this, HanmoneyStep1::class.java)
+////        startActivity(intent)
+////        finish()
+////    }
+////
+////    selectedFriendNames = intent.getStringArrayExtra("selectedFriendNames")
+////    selectedUserProfiles = intent.getIntArrayExtra("selectedUserProfiles")
+////
+////    if (selectedFriendNames != null && selectedUserProfiles != null) {
+////        val calendar = Calendar.getInstance()
+////        val currentDate = SimpleDateFormat("dd/MM/yyyy").format(calendar.time)
+////        val textViewDate = findViewById<TextView>(R.id.step2datecurent)
+////        textViewDate.text = currentDate
+////
+////        // Pass editTextValues to MyAdapterstep2
+////        val myAdapter = MyAdapterstep2(selectedFriendNames!!, selectedUserProfiles!!, editTextValues)
+////        recyclerView!!.adapter = myAdapter
+////
+////        btnconfirm!!.setOnClickListener {
+////            Toast.makeText(this, "Values: $editTextValues", Toast.LENGTH_LONG).show()
+////        }
+////    } else {
+////        Toast.makeText(this, "Error: Intent extras are null", Toast.LENGTH_LONG).show()
+////        finish()
+////    }
+////
+////    radiohanequl!!.setOnClickListener {
+////        val han1myAdapter = MyAdapterstep2(selectedFriendNames!!, selectedUserProfiles!!, editTextValues)
+////        recyclerView2!!.adapter = han1myAdapter
+////        Toast.makeText(this, "Values: $editTextValues", Toast.LENGTH_LONG).show()
+////    }
+////
+////    radiohanunequl!!.setOnClickListener {
+////        val han2myAdapter = MyAdapterstep2(selectedFriendNames!!, selectedUserProfiles!!, editTextValues)
+////        recyclerView2!!.adapter = han2myAdapter
+////    }
+//}
+//    fun init(){
+//        recyclerView = findViewById(R.id.recycleviewstep2)
+//        recyclerView2 = findViewById(R.id.hanrecycleviewstep2)
+//        navbarback = findViewById(R.id.navbarstep2back)
+//        navbaredit = findViewById(R.id.navbarstep2edt)
+//        btnconfirm = findViewById(R.id.step2btnconfirm)
+//        radiohanequl = findViewById(R.id.hanequl_layout)
+//        radiohanunequl = findViewById(R.id.hanunequl_layout)
+//    }
+//}
+//
+//
+//
+//
 
-    selectedFriendNames = intent.getStringArrayExtra("selectedFriendNames")
-    selectedUserProfiles = intent.getIntArrayExtra("selectedUserProfiles")
+package com.example.hantanjai_app_proj
 
-    if (selectedFriendNames != null && selectedUserProfiles != null) {
-        val calendar = Calendar.getInstance()
-        val currentDate = SimpleDateFormat("dd/MM/yyyy").format(calendar.time)
-        val textViewDate = findViewById<TextView>(R.id.step2datecurent)
-        textViewDate.text = currentDate
+import android.content.Intent
+import android.os.Bundle
+import android.widget.Button
+import android.widget.EditText
+import android.widget.ImageView
+import android.widget.RadioButton
+import android.widget.TextView
+import android.widget.Toast
+import androidx.appcompat.app.AppCompatActivity
+import androidx.recyclerview.widget.RecyclerView
+import java.text.SimpleDateFormat
+import java.util.Calendar
 
-        // Pass editTextValues to MyAdapterstep2
-        val myAdapter = MyAdapterstep2(selectedFriendNames!!, selectedUserProfiles!!, editTextValues)
-        recyclerView!!.adapter = myAdapter
 
-        btnconfirm!!.setOnClickListener {
-            Toast.makeText(this, "Values: $editTextValues", Toast.LENGTH_LONG).show()
+class Hanmoney_step2 : AppCompatActivity() {
+    var recyclerView: RecyclerView? = null
+    var recyclerView2: RecyclerView? = null
+    var navbarback: ImageView? = null
+    var navbaredit: EditText? = null
+    var btnconfirm: Button? = null
+    var radiohanequl: RadioButton? = null
+    var radiohanunequl: RadioButton? = null
+    var showtotal: TextView? = null
+    private var editTextValues: MutableList<String?> = mutableListOf()
+    var selectedFriendNames: Array<String>? = null
+    var selectedUserProfiles: IntArray? = null
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        setContentView(R.layout.activity_hanmoney_step2)
+        init()
+        navbarback?.setOnClickListener {
+
+            val intent = Intent(this, HanmoneyStep1::class.java)
+
+
+            // Start the next activity
+            startActivity(intent)
+            finish()
         }
-    } else {
-        Toast.makeText(this, "Error: Intent extras are null", Toast.LENGTH_LONG).show()
-        finish()
-    }
 
-    radiohanequl!!.setOnClickListener {
-        val han1myAdapter = MyAdapterstep2(selectedFriendNames!!, selectedUserProfiles!!, editTextValues)
-        recyclerView2!!.adapter = han1myAdapter
-        Toast.makeText(this, "Values: $editTextValues", Toast.LENGTH_LONG).show()
-    }
+        // Retrieve the selectedFriendNames and selectedUserProfiles from the intent
+        selectedFriendNames = intent.getStringArrayExtra("selectedFriendNames")
+        selectedUserProfiles = intent.getIntArrayExtra("selectedUserProfiles")
 
-    radiohanunequl!!.setOnClickListener {
-        val han2myAdapter = MyAdapterstep2(selectedFriendNames!!, selectedUserProfiles!!, editTextValues)
-        recyclerView2!!.adapter = han2myAdapter
+        if (selectedFriendNames != null && selectedUserProfiles != null) {
+            val calendar = Calendar.getInstance()
+            val currentDate = SimpleDateFormat("dd/MM/yyyy").format(calendar.time)
+
+            val textViewDate = findViewById<TextView>(R.id.step2datecurent)
+            textViewDate.text = currentDate
+
+            // Pass editTextValues to MyAdapterstep2
+            val myAdapter = MyAdapterstep2(
+                selectedFriendNames!!.toList(),
+                selectedUserProfiles!!.toList(),
+                editTextValues
+            ) { updatedValues ->
+                editTextValues = updatedValues.toMutableList()
+            }
+
+
+            recyclerView!!.adapter = myAdapter
+            radiohanequl!!.setOnCheckedChangeListener { _, isChecked ->
+                if (isChecked) {
+                    val total = editTextValues
+                        .filterNotNull()
+                        .map { it.toDoubleOrNull() ?: 0.0 }
+                        .sum()
+
+                    showtotal?.text = "$total ฿"
+                }
+            }
+
+            radiohanunequl!!.setOnCheckedChangeListener { _, isChecked ->
+                if (isChecked) {
+                    val total = editTextValues
+                        .filterNotNull()
+                        .map { it.toDoubleOrNull() ?: 0.0 }
+                        .sum()
+
+                    showtotal?.text = "$total ฿"
+                }
+            }
+
+//            btnconfirm!!.setOnClickListener {
+//                val total = editTextValues
+//                    .filterNotNull()
+//                    .map { it.toDoubleOrNull() ?: 0.0 } // Convert String values to Double, default to 0.0 if conversion fails
+//                    .sum()
+//
+//                showtotal?.text = "$total ฿"
+//            }
+        } else {
+            // Handle the case where intent extras are null
+            Toast.makeText(this, "Error: Intent extras are null", Toast.LENGTH_LONG).show()
+            finish() // Finish the activity or handle the error accordingly
+        }
+
+
     }
-}
     fun init(){
         recyclerView = findViewById(R.id.recycleviewstep2)
         recyclerView2 = findViewById(R.id.hanrecycleviewstep2)
@@ -136,6 +253,17 @@ override fun onCreate(savedInstanceState: Bundle?) {
         btnconfirm = findViewById(R.id.step2btnconfirm)
         radiohanequl = findViewById(R.id.hanequl_layout)
         radiohanunequl = findViewById(R.id.hanunequl_layout)
+        showtotal = findViewById(R.id.step2calall)
     }
 }
 
+
+//        radiohanequl!!.setOnClickListener {
+//        val han1myAdapter = MyAdapterstep2(selectedFriendNames!!.toList(), selectedUserProfiles!!.toList())
+//        recyclerView2!!.adapter = han1myAdapter
+//    }
+//
+//    radiohanunequl!!.setOnClickListener {
+//        val han2myAdapter = MyAdapterstep2(selectedFriendNames!!.toList(), selectedUserProfiles!!.toList())
+//        recyclerView2!!.adapter = han2myAdapter
+//    }
