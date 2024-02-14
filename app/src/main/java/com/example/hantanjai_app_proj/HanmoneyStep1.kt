@@ -1,15 +1,14 @@
 package com.example.hantanjai_app_proj
 
+import android.content.Intent
 import android.graphics.drawable.ColorDrawable
 import android.os.Bundle
-import android.view.LayoutInflater
+import android.util.SparseBooleanArray
 import android.view.MotionEvent
 import android.view.View
-import android.view.ViewGroup
+import android.widget.Button
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
-import androidx.cardview.widget.CardView
-import androidx.compose.ui.graphics.Color
 import androidx.recyclerview.selection.ItemDetailsLookup
 import androidx.recyclerview.selection.SelectionPredicates
 import androidx.recyclerview.selection.SelectionTracker
@@ -22,6 +21,7 @@ import androidx.recyclerview.widget.RecyclerView
 class HanmoneyStep1 : AppCompatActivity() {
 
     var recyclerView: RecyclerView? = null
+    var step1btnconfirm: Button? = null
 
     var friendName = arrayOf(
         "Seulgi",
@@ -48,13 +48,30 @@ class HanmoneyStep1 : AppCompatActivity() {
         setContentView(R.layout.activity_hanmoney_step_one)
         init()
 
-        val myAdapter = MyAdapter(friendName,userProfile)
-        recyclerView!!.adapter=myAdapter
+        val myAdapterForHanStepOne = MyAdapterForHanStepOne(friendName, userProfile)
+        recyclerView!!.adapter = myAdapterForHanStepOne
 
+        step1btnconfirm?.setOnClickListener {
+            val selectedIndices = myAdapterForHanStepOne.getSelectedIndices()
+
+            // Filter arrays based on selected indices
+            val selectedFriendNames = selectedIndices.map { friendName[it] }.toTypedArray()
+            val selectedUserProfiles = selectedIndices.map { userProfile[it] }.toTypedArray()
+
+            // Pass the filtered arrays to the next activity
+            val intent = Intent(this, Hanmoney_step2::class.java)
+            intent.putExtra("selectedFriendNames", selectedFriendNames)
+            intent.putExtra("selectedUserProfiles", selectedUserProfiles)
+
+            // Start the next activity
+            startActivity(intent)
+            finish()
+        }
     }
 
     fun init(){
         recyclerView = findViewById(R.id.recycler_view)
+        step1btnconfirm = findViewById(R.id.step1btnconfirm)
     }
 
 }
