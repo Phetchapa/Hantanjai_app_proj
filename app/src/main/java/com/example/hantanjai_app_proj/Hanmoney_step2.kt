@@ -263,7 +263,7 @@ class Hanmoney_step2 : AppCompatActivity() {
             radiohanunequl!!.setOnCheckedChangeListener { _, isChecked ->
                 if (isChecked) {
                     // Show recyclerView2 when radiohanunequl is checked
-//                    recyclerView2?.visibility = View.VISIBLE
+                    recyclerView2?.visibility = View.VISIBLE
                     // Pass editTextValues to MyAdapterstep2 for recyclerView2
                     val myAdapter2 = MyAdapterstep2(
                         selectedFriendNames!!.toList(),
@@ -282,7 +282,7 @@ class Hanmoney_step2 : AppCompatActivity() {
                     showtotal?.text = "$total ฿"
                 }else {
                     // Hide recyclerView2 when radiohanunequl is not checked
-//                    recyclerView2?.visibility = View.GONE
+                    recyclerView2?.visibility = View.GONE
                 }
             }
             btnconfirm!!.setOnClickListener {
