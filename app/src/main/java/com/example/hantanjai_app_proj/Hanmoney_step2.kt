@@ -1,7 +1,6 @@
 package com.example.hantanjai_app_proj
 
 import android.os.Bundle
-import android.view.View.OnFocusChangeListener
 import android.widget.Button
 import android.widget.EditText
 import android.widget.ImageView
@@ -50,27 +49,48 @@ class Hanmoney_step2 : AppCompatActivity() {
         R.drawable.flower06,
         R.drawable.flower07
     )
-    val selectedFriendNames = intent.getStringArrayExtra("selectedFriendNames")
-    val selectedUserProfiles = intent.getIntArrayExtra("selectedUserProfiles")
+
+    var selectedFriendNames: Array<String>? = null
+    var selectedUserProfiles: IntArray? = null
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_hanmoney_step2)
         init()
 
-        val calendar = Calendar.getInstance()
-        val currentDate = SimpleDateFormat("dd/MM/yyyy").format(calendar.time)
+        // Retrieve the selectedFriendNames and selectedUserProfiles from the intent
+        selectedFriendNames = intent.getStringArrayExtra("selectedFriendNames")
+        selectedUserProfiles = intent.getIntArrayExtra("selectedUserProfiles")
 
-        val textViewDate = findViewById<TextView>(R.id.step2datecurent)
-        textViewDate.text = currentDate
+        if (selectedFriendNames != null && selectedUserProfiles != null) {
+            val calendar = Calendar.getInstance()
+            val currentDate = SimpleDateFormat("dd/MM/yyyy").format(calendar.time)
 
-        val myAdapter = MyAdapterstep2(selectedFriendNames,selectedUserProfiles)
-        recyclerView!!.adapter=myAdapter
-        btnconfirm!!.setOnClickListener {
-            Toast.makeText(this,"hello",Toast.LENGTH_LONG).show()
+            val textViewDate = findViewById<TextView>(R.id.step2datecurent)
+            textViewDate.text = currentDate
+
+            val myAdapter = MyAdapterstep2(selectedFriendNames!!, selectedUserProfiles!!)
+            recyclerView!!.adapter = myAdapter
+
+            btnconfirm!!.setOnClickListener {
+                Toast.makeText(this, "hello", Toast.LENGTH_LONG).show()
+            }
+        } else {
+            // Handle the case where intent extras are null
+            Toast.makeText(this, "Error: Intent extras are null", Toast.LENGTH_LONG).show()
+            finish() // Finish the activity or handle the error accordingly
         }
 
-
-
+//        val calendar = Calendar.getInstance()
+//        val currentDate = SimpleDateFormat("dd/MM/yyyy").format(calendar.time)
+//
+//        val textViewDate = findViewById<TextView>(R.id.step2datecurent)
+//        textViewDate.text = currentDate
+//
+//        val myAdapter = MyAdapterstep2(selectedFriendNames,selectedUserProfiles)
+//        recyclerView!!.adapter=myAdapter
+//        btnconfirm!!.setOnClickListener {
+//            Toast.makeText(this,"hello",Toast.LENGTH_LONG).show()
+//        }
 
     }
     fun init(){

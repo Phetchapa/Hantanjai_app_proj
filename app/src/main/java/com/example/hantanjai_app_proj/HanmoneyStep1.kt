@@ -56,7 +56,7 @@ class HanmoneyStep1 : AppCompatActivity() {
 
             // Filter arrays based on selected indices
             val selectedFriendNames = selectedIndices.map { friendName[it] }.toTypedArray()
-            val selectedUserProfiles = selectedIndices.map { userProfile[it] }.toTypedArray()
+            val selectedUserProfiles = selectedIndices.map { userProfile[it] }.toIntArray()
 
             // Pass the filtered arrays to the next activity
             val intent = Intent(this, Hanmoney_step2::class.java)

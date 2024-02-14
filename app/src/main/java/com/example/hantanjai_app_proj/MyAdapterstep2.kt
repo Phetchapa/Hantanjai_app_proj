@@ -7,7 +7,7 @@ import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import de.hdodenhof.circleimageview.CircleImageView
 
-class MyAdapterstep2(val items:Array<String>, val imageId:Array<Int>):
+class MyAdapterstep2(val items:Array<String>, val imageId: IntArray):
     RecyclerView.Adapter<MyAdapterstep2.ViewHolder>(){
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MyAdapterstep2.ViewHolder {
         return ViewHolder(
