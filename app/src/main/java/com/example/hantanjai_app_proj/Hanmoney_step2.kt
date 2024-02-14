@@ -50,7 +50,8 @@ class Hanmoney_step2 : AppCompatActivity() {
         R.drawable.flower06,
         R.drawable.flower07
     )
-
+    val selectedFriendNames = intent.getStringArrayExtra("selectedFriendNames")
+    val selectedUserProfiles = intent.getIntArrayExtra("selectedUserProfiles")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_hanmoney_step2)
@@ -62,11 +63,13 @@ class Hanmoney_step2 : AppCompatActivity() {
         val textViewDate = findViewById<TextView>(R.id.step2datecurent)
         textViewDate.text = currentDate
 
-        val myAdapter = MyAdapterstep2(friendName,userProfile)
+        val myAdapter = MyAdapterstep2(selectedFriendNames,selectedUserProfiles)
         recyclerView!!.adapter=myAdapter
         btnconfirm!!.setOnClickListener {
             Toast.makeText(this,"hello",Toast.LENGTH_LONG).show()
         }
+
+
 
 
     }
