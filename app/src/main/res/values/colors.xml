@@ -17,6 +17,6 @@
     <color name="colorBackground">#EEEEEE</color>
 
     <!--  color for hanmoneyฆtep1  -->
-    <color name="orange_700">#FFA726</color>
-    <color name="purple_500">#9C27B0</color>
+    <color name="ColorLightGray">#C0C0C0</color>
+    <color name="ColorWhite">#FFFFFF</color>
 </resources>
