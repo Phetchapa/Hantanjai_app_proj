@@ -15,6 +15,61 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
+        <TextView
+            android:id="@+id/maintextotal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:layout_gravity="start"
+            android:text="hello world"
+            />
+        <TextView
+            android:id="@+id/maintextone"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:layout_gravity="start"
+            android:text="one"
+
+            android:layout_marginTop="30dp"
+            />
+        <TextView
+            android:id="@+id/maintexttwo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:layout_gravity="start"
+            android:text="two"
+            android:layout_marginTop="60dp"
+            />
+        <TextView
+            android:id="@+id/maintextthree"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:layout_gravity="start"
+            android:text="three"
+            android:layout_marginTop="90dp"
+            />
+        <TextView
+            android:id="@+id/maintextfour"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:layout_gravity="start"
+            android:text="four"
+            android:layout_marginTop="120dp"
+            />
+        <TextView
+            android:id="@+id/maintextfive"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:layout_gravity="start"
+
+            android:layout_marginTop="150dp"
+            />
+
     </FrameLayout>
 
 

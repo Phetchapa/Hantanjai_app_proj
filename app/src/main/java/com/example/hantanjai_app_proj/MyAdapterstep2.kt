@@ -10,10 +10,14 @@
 //import de.hdodenhof.circleimageview.CircleImageView
 //
 //class MyAdapterstep2(
-//    private val friendNames: Array<String>,
-//    private val userProfiles: IntArray,
-//    private val editTextValues: MutableList<String?>
+//    private val friendNames: List<String>,
+//    private val userProfiles: List<Int>,
+//    private val editTextValues: MutableList<String?>,
+//    param: (Any) -> Unit
 //) : RecyclerView.Adapter<MyAdapterstep2.ViewHolder>() {
+//
+//
+//
 //
 //    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
 //        return ViewHolder(
@@ -51,7 +55,7 @@
 //        internal var editText: EditText? = itemView.findViewById(R.id.task_editstep2)
 //    }
 //}
-
+//
 package com.example.hantanjai_app_proj
 
 import android.text.Editable
@@ -66,10 +70,10 @@ import androidx.recyclerview.widget.RecyclerView
 import de.hdodenhof.circleimageview.CircleImageView
 
 class MyAdapterstep2(
-    private val items: List<String>,
-    private val imageId: List<Int>,
-    private val editTextValues: MutableList<String?>,
-    private val listener: (List<String?>) -> Unit
+ val items: List<String>,
+val imageId: List<Int>,
+  val editTextValues: MutableList<String?>,
+    val listener: (List<String?>) -> Unit
 ) : RecyclerView.Adapter<MyAdapterstep2.ViewHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MyAdapterstep2.ViewHolder {
