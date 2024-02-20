@@ -140,28 +140,19 @@ class HanmoneyStep1 : AppCompatActivity() {
         })
     }
 
-    //
+
     private fun filterList(query: String?) {
         if (query != null) {
-            // ทำการค้นหาในรายชื่อที่เลือกเท่านั้น
-            val filteredList = myAdapterForHanStepOne.getSelectedItems().filter {
-                it.first.contains(query, ignoreCase = true)
+            val filteredList = mutableListOf<Pair<String, Int>>()
+            for (i in 0 until friendName.size) {
+                if (friendName[i].contains(query, ignoreCase = true)) {
+                    filteredList.add(Pair(friendName[i], userProfile[i]))
+                }
             }
-
-            // สร้าง Adapter ใหม่พร้อมกับรายการที่ถูกกรอง
-//            val filteredAdapter = MyAdapterForHanStepOne(
-//                filteredList.map { it.first }.toTypedArray(),
-//                filteredList.map { it.second }.toIntArray()
-//
-//            )
-
-            // แทนที่ Adapter เดิมด้วย Adapter ที่ถูกกรอง
-           // recyclerView?.adapter = filteredAdapter
+            // Update RecyclerView with filtered list
+            myAdapterForHanStepOne.updateList(filteredList)
         }
     }
-
-
-
     //End Search view
 
     fun init(){

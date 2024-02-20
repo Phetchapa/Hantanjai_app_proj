@@ -10,7 +10,7 @@ import androidx.core.content.ContextCompat
 import androidx.recyclerview.widget.RecyclerView
 import de.hdodenhof.circleimageview.CircleImageView
 
-class MyAdapterForHanStepOne(val items:Array<String>, val imageId: Array<Int>):
+class MyAdapterForHanStepOne(var items:Array<String>, var imageId: Array<Int>):
     RecyclerView.Adapter<MyAdapterForHanStepOne.ViewHolder>(){
 
     private var selectedItems = mutableListOf<Int>()
@@ -114,4 +114,12 @@ class MyAdapterForHanStepOne(val items:Array<String>, val imageId: Array<Int>):
         internal var imageIdView : CircleImageView? = itemView.findViewById(R.id.profile_image_step1)
         internal var cardView: CardView? = itemView.findViewById(R.id.card_view_selectAll)
     }
+
+    //search view
+    fun updateList(newList: List<Pair<String, Int>>) {
+        items = newList.map { it.first }.toTypedArray()
+        imageId = newList.map { it.second }.toTypedArray()
+        notifyDataSetChanged()
+    }
+    //End search view
 }
