@@ -60,4 +60,10 @@ dependencies {
     implementation ("androidx.recyclerview:recyclerview-selection:1.1.0")
     implementation ("de.hdodenhof:circleimageview:3.1.0")
 
+    //Dialog
+    implementation ("com.google.android.material:material:1.4.0")
+    implementation ("androidx.appcompat:appcompat:1.4.0")
+    implementation ("androidx.core:core-ktx:1.7.0")
+
+
 }

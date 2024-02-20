@@ -10,13 +10,30 @@ import androidx.core.content.ContextCompat
 import androidx.recyclerview.widget.RecyclerView
 import de.hdodenhof.circleimageview.CircleImageView
 
-class MyAdapterForHanStepOne(val items:Array<String>, val imageId:Array<Int>):
+class MyAdapterForHanStepOne(val items:Array<String>, val imageId: Array<Int>):
     RecyclerView.Adapter<MyAdapterForHanStepOne.ViewHolder>(){
 
     private var selectedItems = mutableListOf<Int>()
 
     //select all
     private var allItemsSelected = false
+
+    fun selectCardAll(cardViewSelectAll: CardView?) {
+        cardViewSelectAll?.setOnClickListener {
+            if (!allItemsSelected) {
+                // Select all items in the RecyclerView
+                selectAllItems()
+                allItemsSelected = true
+            } else {
+                // Deselect all items in the RecyclerView
+                deselectAllItems()
+                allItemsSelected = false
+            }
+
+            // Notify the RecyclerView to update the UI
+            notifyDataSetChanged()
+        }
+    }
 
     fun selectAllItems() {
         selectedItems.clear()
@@ -94,7 +111,7 @@ class MyAdapterForHanStepOne(val items:Array<String>, val imageId:Array<Int>):
 
     class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         internal var nameTextView : TextView? = itemView.findViewById(R.id.task_title_select_all)
-        internal var imageIdView : CircleImageView? = itemView.findViewById(R.id.profile_image)
+        internal var imageIdView : CircleImageView? = itemView.findViewById(R.id.profile_image_step1)
         internal var cardView: CardView? = itemView.findViewById(R.id.card_view_selectAll)
     }
 }

@@ -16,7 +16,15 @@
     <color name="colorRatingInactive">#C9C9D1</color>
     <color name="colorBackground">#EEEEEE</color>
 
-    <!--  color for hanmoneyฆtep1  -->
+    <!--  color for hanmoneystep1  -->
     <color name="ColorLightGray">#C0C0C0</color>
     <color name="ColorWhite">#FFFFFF</color>
+
+    <!--  color for Dialog Hanmoneystep1  -->
+    <color name="colorPrimary_D">#03A9F4</color>
+    <color name="colorPrimaryVariant_D">#03A9F4</color>
+    <color name="colorOnPrimary_D">#FDA14F</color>
+    <color name="colorSecondary_D">#FFFFFF</color>
+    <color name="colorSecondaryVariant_D">#212121</color>
+    <color name="colorOnSecondary_D">#757575</color>
 </resources>

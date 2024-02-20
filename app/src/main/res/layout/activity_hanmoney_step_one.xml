@@ -11,20 +11,46 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:fillViewport="true"
-     >
+        app:layout_constraintTop_toTopOf="parent">
 
 
         <LinearLayout
+            android:id="@+id/selectallcardview"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_marginTop="0dp"
-            android:orientation="vertical"
-            android:id="@+id/selectallcardview"
             android:layout_marginBottom="70dp"
-
-       >
+            android:orientation="vertical">
 
             <!--    card view    -->
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="70dp"
+                android:gravity="center_vertical"
+                android:padding="10dp"
+                android:background="@color/white"
+                android:orientation="horizontal">
+
+                <androidx.appcompat.widget.SearchView
+                    android:id="@+id/searchview"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.75"
+                    app:queryHint="ค้นหารายชื่อเพื่อน"
+                    app:iconifiedByDefault="false"
+                    app:queryBackground="@android:color/transparent"/>
+
+                <Button
+                    android:id="@+id/btntesths1"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.25"
+                    android:background="@drawable/buttonbackforstep2"
+                    android:text="เพิ่มรายชื่อ"
+                    android:textColor="#2196F3" />
+            </LinearLayout>
+
             <androidx.cardview.widget.CardView
                 android:id="@+id/card_view_selectAll"
                 android:layout_width="match_parent"
@@ -57,7 +83,7 @@
 
                             <!-- Circular Image View  -->
                             <de.hdodenhof.circleimageview.CircleImageView
-                                android:id="@+id/profile_image"
+                                android:id="@+id/profile_image_step1"
                                 android:layout_width="300dp"
                                 android:layout_height="300dp"
                                 android:layout_centerInParent="true"
@@ -65,7 +91,6 @@
 
                         </RelativeLayout>
                     </LinearLayout>
-
 
 
                     <LinearLayout
@@ -79,9 +104,9 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:fontFamily="sans-serif"
+                            android:text="เลือกทั้งหมด"
                             android:textColor="@color/black"
-                            android:textSize="22sp"
-                            tools:text="เลือกทั้งหมด" />
+                            android:textSize="22sp" />
 
                     </LinearLayout>
 
@@ -89,16 +114,15 @@
 
 
             </androidx.cardview.widget.CardView>
-            <!--  end card view  -->
 
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/recycler_view"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="16dp"
                 android:layout_marginBottom="16dp"
-                app:layout_constraintBottom_toBottomOf="@+id/selectallcardview"
                 app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager" />
+
+            <!--  end card view  -->
 
 
         </LinearLayout>
