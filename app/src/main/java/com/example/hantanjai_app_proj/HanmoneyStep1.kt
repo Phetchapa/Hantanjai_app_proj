@@ -140,6 +140,7 @@ class HanmoneyStep1 : AppCompatActivity() {
         })
     }
 
+    //
     private fun filterList(query: String?) {
         if (query != null) {
             // ทำการค้นหาในรายชื่อที่เลือกเท่านั้น
