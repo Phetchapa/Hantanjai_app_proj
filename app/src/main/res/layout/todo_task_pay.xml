@@ -59,16 +59,16 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_weight="0.2"
-        android:layout_marginEnd="10dp"
         android:orientation="vertical">
         <!-- ส่วนของเนื้อหาของ LinearLayout ที่เป็นแนวนอนที่ 1 -->
 
         <TextView
             android:id="@+id/memberpay_step3"
             android:layout_width="wrap_content"
+            android:text="20"
+            android:layout_gravity="end"
             android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="TextView" />
+            android:layout_weight="1" />
 
     </LinearLayout>
 

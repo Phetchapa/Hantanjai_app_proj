@@ -28,6 +28,7 @@ class Hanmoney_step2 : AppCompatActivity() {
     var selectedFriendNames: Array<String>? = null
     var selectedUserProfiles: IntArray? = null
 
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_hanmoney_step2)
@@ -122,13 +123,17 @@ class Hanmoney_step2 : AppCompatActivity() {
                 ).show()
 
                 // Create an Intent to start the HomeActivity
-                val intent = Intent(this, MainActivity::class.java)
+                val intent = Intent(this,Hanmoney_step3::class.java)
 
                 // Pass the necessary data to the next activity
                 intent.putExtra("totalValue", total)
                 intent.putExtra("editTextValues", editTextValues.toTypedArray())
                 intent.putExtra("namesAndValuesRecycle1", namesAndValuesRecycle1)
                 intent.putExtra("namesAndValuesRecycle2", namesAndValuesRecycle2)
+                intent.putExtra("navbareditValue", navbaredit?.text.toString())
+                intent.putExtra("textViewDateValue", textViewDate.text.toString())
+                intent.putExtra("textViewDateValue", textViewDate.text.toString())
+                intent.putExtra("imageIds", selectedUserProfiles)
 
                 // Start the next activity
                 startActivity(intent)

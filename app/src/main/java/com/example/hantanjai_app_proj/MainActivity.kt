@@ -157,7 +157,7 @@ class MainActivity : AppCompatActivity() {
                     val amount = minOf(-payerAmount, payeeAmount)
 
                     if (amount > 0) {
-                        val message = "$payer pays $payee an additional $amount"
+                        val message = "$payer ต้องจ่ายให้ $payee จำนวนเงิน $amount บาท"
 
                         // Append the message to textview5
                         textview5.append(message + "\n")

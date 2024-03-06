@@ -22,7 +22,7 @@
                 android:layout_height="match_parent" />
 
             <androidx.cardview.widget.CardView
-                android:id="@+id/card_view_step3"
+                android:id="@+id/card_view_step311"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_marginTop="0dp"
@@ -36,7 +36,7 @@
                     android:orientation="vertical">
 
                     <LinearLayout
-                        android:id="@+id/peoplepay3"
+                        android:id="@+id/peoplepay311"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:orientation="horizontal"
@@ -46,7 +46,7 @@
                         >
 
                         <TextView
-                            android:id="@+id/step3peoplepay"
+                            android:id="@+id/step3peoplepay111"
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"
                             android:layout_marginStart="10dp"
@@ -58,7 +58,7 @@
                     </LinearLayout>
 
                     <LinearLayout
-                        android:id="@+id/calall"
+                        android:id="@+id/calall11111"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:gravity="center_vertical"
@@ -67,7 +67,7 @@
                         app:layout_constraintTop_toBottomOf="@+id/datestep2">
 
                         <TextView
-                            android:id="@+id/step2all"
+                            android:id="@+id/step2all11111"
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"
                             android:layout_marginStart="10dp"
@@ -77,7 +77,7 @@
                             />
 
                         <TextView
-                            android:id="@+id/step2calall"
+                            android:id="@+id/step3calall11111"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_marginEnd="10dp"
@@ -92,7 +92,7 @@
                         android:layout_height="match_parent" />
 
                     <LinearLayout
-                        android:id="@+id/peoplepay"
+                        android:id="@+id/peoplepay11111"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:gravity="center_vertical"
@@ -101,7 +101,7 @@
                         app:layout_constraintTop_toBottomOf="@+id/calall">
 
                         <TextView
-                            android:id="@+id/step2peoplepay"
+                            android:id="@+id/step2peoplepay11111"
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"
                             android:layout_marginStart="10dp"
@@ -113,7 +113,7 @@
                     </LinearLayout>
 
                     <androidx.recyclerview.widget.RecyclerView
-                        android:id="@+id/recycleview_bill2_s3"
+                        android:id="@+id/recycleview_bill2_s311111"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent" />
 
