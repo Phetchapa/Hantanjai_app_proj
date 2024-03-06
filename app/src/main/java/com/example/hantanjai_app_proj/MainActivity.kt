@@ -17,6 +17,7 @@ class MainActivity : AppCompatActivity() {
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
+
         try {
             val totalValue = intent.getDoubleExtra("totalValue", 0.0)
             val editTextValues = intent.getStringArrayExtra("editTextValues") ?: emptyArray()

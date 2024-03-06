@@ -139,16 +139,6 @@
         app:layout_constraintBottom_toBottomOf="@+id/nestedScrollViewstep1">
 
         <Button
-            android:id="@+id/step1btnback"
-            android:layout_width="150dp"
-            android:layout_height="50dp"
-            android:background="@drawable/buttonbackforstep2"
-            android:text="ย้อนกลับ"
-            android:textColor="@color/skyblue"
-            android:textSize="15sp"
-            app:cornerRadius="8dp" />
-
-        <Button
             android:id="@+id/step1btnconfirm"
             android:layout_width="match_parent"
             android:layout_height="50dp"
