@@ -27,7 +27,7 @@ class Hanmoney_step2 : AppCompatActivity() {
     private var editTextValues: MutableList<String?> = mutableListOf()
     var selectedFriendNames: Array<String>? = null
     var selectedUserProfiles: IntArray? = null
-
+    var btnback : Button? =null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -35,6 +35,11 @@ class Hanmoney_step2 : AppCompatActivity() {
         init()
         getSupportActionBar()?.hide()
         navbarback?.setOnClickListener {
+            val intent = Intent(this, HanmoneyStep1::class.java)
+            startActivity(intent)
+            finish()
+        }
+        btnback?.setOnClickListener {
             val intent = Intent(this, HanmoneyStep1::class.java)
             startActivity(intent)
             finish()
@@ -157,6 +162,7 @@ class Hanmoney_step2 : AppCompatActivity() {
         radiohanequl = findViewById(R.id.hanequl_layout)
         radiohanunequl = findViewById(R.id.hanunequl_layout)
         showtotal = findViewById(R.id.step2calall)
+        btnback = findViewById(R.id.step2btnback)
     }
 
 }

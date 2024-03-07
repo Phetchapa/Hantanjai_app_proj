@@ -13,6 +13,7 @@
 //}
 package com.example.hantanjai_app_proj
 
+import android.content.Intent
 import android.os.Bundle
 import android.widget.Button
 import android.widget.EditText
@@ -36,12 +37,17 @@ class Hanmoney_step3 : AppCompatActivity() {
     var datecurrent: TextView? = null
     private var payer: String? = null
     private var payee: String? = null
+    var btncomfirm : Button? =null
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_hanmoney_stepthree)
         init()
         supportActionBar?.hide()
-
+        btncomfirm?.setOnClickListener {
+            val intent = Intent(this, HanmoneyStep1::class.java)
+            startActivity(intent)
+            finish()
+        }
         val totalValue = intent.getDoubleExtra("totalValue", 0.0)
         val editTextValues = intent.getStringArrayExtra("editTextValues") ?: emptyArray()
         val namesAndValuesRecycle1 = intent.getStringExtra("namesAndValuesRecycle1")
@@ -172,6 +178,7 @@ class Hanmoney_step3 : AppCompatActivity() {
         billtotal = findViewById(R.id.billtotal3)
         dbilltotal = findViewById(R.id.step3calall)
         datecurrent = findViewById(R.id.step3datecurentt)
+        btncomfirm = findViewById(R.id.step3btnconfirmmmmmm)
     }
 }
 

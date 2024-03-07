@@ -17,13 +17,7 @@
         android:orientation="horizontal"
         android:padding="10dp"
         app:layout_constraintTop_toTopOf="parent">
-        <ImageView
-            android:id="@+id/navbarstep2back"
-            android:layout_width="28dp"
-            android:layout_height="28dp"
-            android:contentDescription="back"
-            android:src="@drawable/arrowback"
-            app:tint="@color/white"/>
+
         <LinearLayout
         android:id="@+id/navbarfield"
         android:layout_width="match_parent"
@@ -253,7 +247,7 @@
             >
 
             <Button
-                android:id="@+id/step3btnconfirm"
+                android:id="@+id/step3btnconfirmmmmmm"
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
                 android:layout_weight="0.7"
